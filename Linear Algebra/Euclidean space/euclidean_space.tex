@@ -1,0 +1,186 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+% math equation and simple text indentation
+\usepackage[fleqn]{amsmath}
+\setlength{\mathindent}{0em}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\usepackage { amsmath , amssymb , amsthm, mathtools } %math packages
+\usepackage[russian]{babel}
+\usepackage{verbatim} %for comments
+ 
+\title{Eiklīda telpas}
+\author{Henrik Gabrielyan}
+\date{the 20 of May 2019}
+
+\begin{document}
+
+\maketitle
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\underline{$1212. - 1216.$}\\
+
+$1212.$  $ 5x_1^2 + x_2^2 +  \alpha x_3^2 + 4x_1x_2-2x_1x_3-2x_2x_3$
+
+\begin{gather*}
+F_s = 
+\begin{pmatrix}
+   5 & 2 & -1 \\
+   2 & 1 & -1 \\
+   -1 & -1 & \alpha \\
+\end{pmatrix}
+\end {gather*}
+
+\begin{gather*}
+	|5| = 5 > 0 \quad \quad \\ \\
+	\begin{vmatrix} 
+		5 & 2 \\
+		2 & 1 
+	\end{vmatrix}
+ 	= 5 \cdot 1 - 2 \cdot 2  = 5 - 4 - 1 > 0 \\ \\
+ 	\begin{vmatrix} 
+		5 & 2 & -1 \\
+		2 & 1 & -1 \\
+		-1 & -1 & \alpha
+	\end{vmatrix}
+	= -
+	\begin{vmatrix}
+	2 & -1 \\
+	1 & -1
+	\end{vmatrix}
+	+
+	\begin{vmatrix}
+	5 & -1 \\
+	2 & -1  
+	\end{vmatrix}
+	+ \alpha
+	\begin{vmatrix}
+	5 & 2 \\
+	2 & 1 
+	\end{vmatrix} \\ 
+	= -(-2 + 1) + (-5 + 2) + \alpha = 1 - 3 + \alpha = \alpha  > 2 
+\end{gather*}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Eiklīda telpa
+
+\textbf{\underline{Def.}} Par \textbf{Eiklīda telpu} sauc jebkuru pāri (E,F), kur E ir linēara telpa pār R un F ir pozitīvi noteikta kvadrātiska forma.
+
+F atbilstošo simetrisko bilineāro formu sauc par šīs \textbf{Eiklīda telpas skalāro reizinājumu}. 
+
+x un y skalārais reizniājums : (x, y)
+
+Izvēlamies bāzi, kurā F ir normālformā.
+
+\newcommand\x{\times}
+\newcommand\bigzero{\makebox(0,0){\text{\huge0}}}
+\newcommand*{\bord}{\multicolumn{1}{c|}{}}
+
+Tajā $F(x)= x_1^2+ \ldots + x_n^2 $
+\begin{gather*}
+	F_e = 
+	\begin{pmatrix}
+	1 & && \bigzero   \\ 
+    	& 1 &  \\
+	& &  \ddots  &\\ 
+        & \bigzero  &  \\
+    	& &  & &  1  \\ 	
+    \end{pmatrix}
+\end{gather*}
+
+$(x,y) = x_1y_1 + x_2y_2 + \ldots + x_ny_n$
+
+Skalārā reizinājuma īpašības: \\
+* $(x,y) = (y,x)$ \\
+* $(x_1+x_2, y) = (x_1,y) + (x_2,y)$ \\
+* $(\alpha x,y)= \alpha(x,y)$ \\
+* $ x \neq 0 \rightarrow (x,x) > 0$ \\
+$(0,0) = 0$ \\
+
+Vektora x garums: \\
+$|x| = \sqrt{(x,x)}$ \\
+$|x| = \sqrt{x_1^2 = x_2^2 + \ldots + x_n^2}$ \\
+
+Leņķis starp vektoriem x un y \\
+$\angle (x,y) = arccos \frac{(x,y)}{|x||y|}$ \\ 
+$x \neq 0, y \neq 0$
+
+\pagebreak
+
+Košī nevienādība
+\begin{gather*}
+|(x,y)| \leq |x| * |y|  \\
+  \quad \updownarrow \\
+(x,y)^2 \leq |x|^2 |y|^2  \\
+ 0 \leq (x - \alpha y, x-\alpha y) =  \\
+ \; \; \; = (x, x - \alpha y) - \alpha (y, x - \alpha y) = \\
+ \; \; \; =  (x,x) - \alpha (x,y) - \alpha (y,x) - \alpha^2 (y,y) = \\
+ \; \; \; = (y,y) \alpha^2 - 2 (x,y) \alpha + (x,x) \\
+\Rightarrow  y \neq 0
+\end{gather*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{\underline{Def.}} Saka, ka vektori x un y ir ortogonāli $\Leftrightarrow (x,y) = 0$. Apzīmē, kā $ x \bot y$.
+
+\textbf{\underline{Def.}}  Vektoru sistēmu $e_1, e_2, \ldots, e_k$ sauc par ortogonālu   
+$\Leftrightarrow  \forall i \forall j (i \neq j  \rightarrow e_i  \bot e_j)$
+
+\textbf{\underline{Teorēma.}} Ortogonāla nenulles vektoru sistēma lineāri neatkarīga \\
+$\alpha_1e_1 + \ldots + \alpha_ke_k = 0$ pareizināsim skalāri ar $e_i$ \\
+$(e_i, \alpha_1e_1 + \ldots + \alpha_ke_k) = (e_i,0) $ \\
+$\sum_{j=1}^{k}\alpha_j(e_i,e_j)=0$
+
+\textbf{\underline{Def.}} Saka, ka vektors x ir normēts  $\Leftrightarrow |x| = 1 $
+
+Vektoru x normēšana: 
+
+$ x \rightarrow \frac{x}{|x|} = \frac{1}{|x|} x $
+
+\textbf{\underline{Def.}} Ortogonālu vektoru sistēmu,  kas sastāv no normētiem vektoriem, sauc par ortonormētu vektroru sistēmu. Ja tā ir lineārās telpas bāze, tad to sauc par ortonormētu bāzi. 
+
+\pagebreak 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{\underline{Teorēma.}} Jebkurā galīgi dimensionālā Eiklīda telpā eksistē ortonormēta bāze. \\
+Jebkuru ortonormētu vektoru sistēmu var papildināt līdz ortonormētai bāzei. \\
+
+\textbf{\underline{Pier.}} 
+(E,F) eksistē bāze $e_1, \ldots, e_n$, kurā  F ir normālformā: 
+
+\begin{gather*}
+	F_e = 
+	\begin{pmatrix}
+	1 & && \bigzero   \\ 
+    	& 1 &  \\
+	& &  \ddots  &\\ 
+        & \bigzero  &  \\
+    	& &  & &  1  \\ 	
+    \end{pmatrix}
+    = (f_{ij}) \\ \\ 
+    f_{ij} = (e_i, e_j) = 
+    \begin{cases}
+	0, ja \; \;  i \neq j \\
+	1, ja \; \; i = j 
+     \end{cases}
+\end{gather*}
+
+
+\begin{gather*}
+	e_1, \ldots, e_k \\
+	dim E = n > k \\
+	\begin{cases}
+		(x, e_1) = 0 \\ 
+		\cdots \cdots \cdots \\ 
+ 		(x, e_k) = 0
+	\end{cases} \\
+	k \; vien. \\
+	n \; mainiigie \\
+	k < n
+\end{gather*}
+
+\end {document}
