@@ -10,6 +10,8 @@
 \usepackage { amsmath , amssymb , amsthm, mathtools } %math packages
 \usepackage[russian]{babel}
 \usepackage{verbatim} %for comments
+
+\usepackage{xcolor}
  
 \title{Eiklīda telpas}
 \author{Henrik Gabrielyan}
@@ -103,54 +105,52 @@ $(0,0) = 0$ \\
 
 Vektora x garums: \\
 $|x| = \sqrt{(x,x)}$ \\
-$|x| = \sqrt{x_1^2 = x_2^2 + \ldots + x_n^2}$ \\
+$|x| = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}$ \\
 
 Leņķis starp vektoriem x un y \\
 $\angle (x,y) = arccos \frac{(x,y)}{|x||y|}$ \\ 
 $x \neq 0, y \neq 0$
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 
 Košī nevienādība
 \begin{gather*}
-|(x,y)| \leq |x| * |y|  \\
+|(x,y)| \leq |x| \cdot |y|  \\
   \quad \updownarrow \\
-(x,y)^2 \leq |x|^2 |y|^2  \\
+(x,y)^2 \leq |x|^2 \cdot |y|^2  \\
+\\
+\textcolor{red}{\text{how we came to equation below? what is } \alpha ?} \\
  0 \leq (x - \alpha y, x-\alpha y) =  \\
  \; \; \; = (x, x - \alpha y) - \alpha (y, x - \alpha y) = \\
- \; \; \; =  (x,x) - \alpha (x,y) - \alpha (y,x) - \alpha^2 (y,y) = \\
+ \; \; \; =  (x,x) - \alpha (x,y) - \alpha (y,x) + \alpha^2 (y,y) = \\
  \; \; \; = (y,y) \alpha^2 - 2 (x,y) \alpha + (x,x) \\
 \Rightarrow  y \neq 0
 \end{gather*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\textbf{\underline{Def.}} Saka, ka vektori x un y ir ortogonāli $\Leftrightarrow (x,y) = 0$. Apzīmē, kā $ x \bot y$.
-
-\textbf{\underline{Def.}}  Vektoru sistēmu $e_1, e_2, \ldots, e_k$ sauc par ortogonālu   
-$\Leftrightarrow  \forall i \forall j (i \neq j  \rightarrow e_i  \bot e_j)$
-
+\textbf{\underline{Def.}} Saka, ka  \textbf{vektori} x un y ir \textbf{ortogonāli} $\Leftrightarrow (x,y) = 0$. Apzīmē, kā $ x \bot y$.
+\\ \\
+\textbf{\underline{Def.}}   \textbf{Vektoru sistēmu} $e_1, e_2, \ldots, e_k$ sauc par \textbf{ortogonālu}   
+	$\Leftrightarrow  \forall i \forall j (i \neq j  \rightarrow e_i  \bot e_j)$
+\\ \\
 \textbf{\underline{Teorēma.}} Ortogonāla nenulles vektoru sistēma lineāri neatkarīga \\
-$\alpha_1e_1 + \ldots + \alpha_ke_k = 0$ pareizināsim skalāri ar $e_i$ \\
-$(e_i, \alpha_1e_1 + \ldots + \alpha_ke_k) = (e_i,0) $ \\
-$\sum_{j=1}^{k}\alpha_j(e_i,e_j)=0$
-
-\textbf{\underline{Def.}} Saka, ka vektors x ir normēts  $\Leftrightarrow |x| = 1 $
-
-Vektoru x normēšana: 
-
-$ x \rightarrow \frac{x}{|x|} = \frac{1}{|x|} x $
-
-\textbf{\underline{Def.}} Ortogonālu vektoru sistēmu,  kas sastāv no normētiem vektoriem, sauc par ortonormētu vektroru sistēmu. Ja tā ir lineārās telpas bāze, tad to sauc par ortonormētu bāzi. 
+	$\alpha_1e_1 + \ldots + \alpha_ke_k = 0$ (pareizināsim skalāri ar $e_i$) \\
+	$(e_i, \alpha_1e_1 + \ldots + \alpha_ke_k) = \sum_{j=1}^{k}\alpha_j(e_i,e_j) = 0$
+	\textcolor{red}{why it is equal to 0, if there could be situation then $i = j$, and $(i,j) \neq 0$ ?}
+\\ \\
+\textbf{\underline{Def.}} Saka, ka \textbf{vektors} x ir \textbf{normēts}  $\Leftrightarrow |x| = 1 $ \\
+	Vektoru $x$ normēšana:  $ x \rightarrow \frac{x}{|x|} $ \\ 
+	Lai pierādītu, ka $x$ vektora normēšanai vajag dalīt uz $|x|$, varam vienādībā
+	$|u| = \sqrt{u_1^2 + \ldots u_n^2} = 1$ ievietot $u_1 = \frac{v_1}{|v|} = \frac{v_1}{ \sqrt{v_1^2 + \ldots v_n^2}}$
+\\ \\
+\textbf{\underline{Def.}} Ortogonālu vektoru sistēmu,  kas sastāv no normētiem vektoriem, sauc par \textbf{ortonormētu vektroru sistēmu}. Ja tā ir lineārās telpas bāze, tad to sauc par \textbf{ortonormētu bāzi}. 
 
 \pagebreak 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textbf{\underline{Teorēma.}} Jebkurā galīgi dimensionālā Eiklīda telpā eksistē ortonormēta bāze. \\
-Jebkuru ortonormētu vektoru sistēmu var papildināt līdz ortonormētai bāzei. \\
+\textbf{\underline{Teorēma.}} Jebkurā galīgi dimensionālā Eiklīda telpā eksistē ortonormēta bāze.Jebkuru ortonormētu vektoru sistēmu var papildināt līdz ortonormētai bāzei. \\
 
-\textbf{\underline{Pier.}} 
-(E,F) eksistē bāze $e_1, \ldots, e_n$, kurā  F ir normālformā: 
+\textbf{\underline{Pier.}}  (E,F) eksistē ortonormēta bāze $E = e_1, \ldots, e_n$, kurā  F ir normālformā: 
 
 \begin{gather*}
 	F_e = 
@@ -165,8 +165,10 @@ Jebkuru ortonormētu vektoru sistēmu var papildināt līdz ortonormētai bāzei
     f_{ij} = (e_i, e_j) = 
     \begin{cases}
 	0, ja \; \;  i \neq j \\
-	1, ja \; \; i = j 
+	1, ja \; \; i = j  \; (\text{jo } |e_i| = 1 \text{ un } (e_i, e_i) = |e|^2 \cdot \cos 0^\circ)
      \end{cases}
+     \\
+     \color{red}{F_e \stackrel{?}{=} \sum^n_{i = 1} (e_i, e_i)}
 \end{gather*}
 
 
@@ -178,9 +180,7 @@ Jebkuru ortonormētu vektoru sistēmu var papildināt līdz ortonormētai bāzei
 		\cdots \cdots \cdots \\ 
  		(x, e_k) = 0
 	\end{cases} \\
-	k \; vien. \\
-	n \; mainiigie \\
-	k < n
+	\color{red}{\text{what is } x?}
 \end{gather*}
 
 \end {document}
