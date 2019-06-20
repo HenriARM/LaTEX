@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+% math equation and simple text indentation
+\usepackage[fleqn]{amsmath}
+\setlength{\mathindent}{0em}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\usepackage { amsmath , amssymb , amsthm, mathtools } %math packages
+\usepackage[russian]{babel}
+\usepackage{verbatim} %for comments
+
+\usepackage{xcolor}
+ 
+\title{Eiklīda telpas}
+\author{Henrik Gabrielyan}
+\date{the 24th of May 2019}
+
+\begin{document}
+
+\maketitle
+
+Eiklīda telpa
+
+\begin{gather*}
+	R \quad (x,y) = x_1y_1 + x_2y_2 + x_ny_n \\
+	e_1, \ldots, e_n \quad i \neq j \rightarrow e_i \bot e_j \quad \forall_i (|e_i| = 1) \\
+	\\ \color{red}{\text{what is  } A?} \\
+	\neg A  \quad \quad \; \;  A' \\
+	A \vee B \quad A \cup B  \quad L_1+L_2 \\	
+	A \wedge B \quad A \cap B   \quad  L_1 \cap L_2
+\end{gather*}
+
+\textbf{\underline{Def.}}  Ja E ir Eiklīda telpa, M $\subseteq$ E, tad par kopas M \textbf{ortogonālo papildinājumu} sauc:
+
+\begin{gather*}
+	M^{\bot} = {x \in E | \forall_{y \in M }(x \bot y)} \\
+	M^{\bot} \text{ īpašības :} \\ % put properties in a list
+	\quad M^{\bot} \text{ ir lineāra apakštelpa} \\
+	\text{Ja } M = y^{(1)}, y^{(2)}, \ldots, y^{(k)},  \text{tad} M^{\bot} \text{ ir atrisinājumu kopa HLVS} \\
+	\begin{cases}
+		y_1^{(1)}x_1 + \ldots + y_n^{(1)} x_n = 0 \\
+		\cdots \cdots \cdots \cdots \cdots \\
+		y_1^{(k)}x_1 + \ldots + y_n^{(k)} x_n = 0 \\
+	\end{cases}
+\end{gather*}
+
+$L_1, L_2$ - lineāras apakštelpas
+\begin{gather*}
+	L_1 \oplus L_1^{\bot} = E \\ 
+	(L_1^{\bot}) ^ {\bot} = L_1 \\ 
+	(L_1 + L_2)^{\bot} = L_1^{\bot} \cap L_2^{\bot} \\
+	(L_1 \cap L_2)^{\bot} = L_1^{\bot} +  L_2^{\bot}
+\end{gather*}
+
+
+\textbf{\underline{Def.}}  Ja E - Eiklīda telpa, $L_1$ - lin. apakštelpa, tad jebkuram 
+\begin{gather*}
+	x \in E: x = x_1 + x_2, x_1 \in L_1, x_2 \in L_1^{\bot} \\
+	x_1 \text{ sauc par x \textbf{ortogonālu projekciju} uz } L_1, \quad x_1 = pr_{L_1}x \\
+	x_2 \text{ sauc par } x \text{  \textbf{ortogonālo komponenti} pret } L_1,  \quad x_2 = ort_{L_1}x
+\end{gather*}
+
+% add tikz draw of vector with projection (also in my paper notes (1))
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+Grama - Šmidta process % heading
+
+Ieejā: $u_1, u_2, \ldots, u_k$ \\ 
+Izejā: $w_1, w_2, \ldots, w_L$ - ortonormēta bāze $span(u_1, u_2, \ldots, u_k) $
+
+\begin{gather*}
+	v_1 = u_1 \\
+	v_2 = u_2 - \frac{(u_2, v_1)}{(v_1, v_1)} \cdot v_1 \\
+	v_3 = u_3 - \frac{(u_3, v_1)}{(v_1,v_1)} \cdot v_1 - \frac{(u_3, v_2)}{(v_2, v_2)} \cdot v_2 \\
+	\\
+	\frac{(u_2, u_1)}{|u_1|} \cdot \frac{u_1}{|u_1|} = \frac{(u_2, u_1)}{|u_1|^2} \cdot u_1 = \frac{(u_2, u_1)}{u_1, u_1} \cdot v_1 \\
+	v_k = u_k - \frac{(u_k, v_1)}{(v_1, v_1)} \cdot v_1 - \ldots - \frac{(u_k, v_{k-1})}{(v_{k-1}, v_{k-1})} \cdot v_{k-1} \\
+	\text{Normē visus neizmestos vektorus: } \\
+	\begin{cases*}
+		w_1 = \frac{1}{|v_1|} \cdot v_1 \\
+		\ldots \ldots \ldots \\
+		w_k  =\frac{1}{v_k} \cdot v_k
+	\end{cases*}
+\end{gather*}
+
+% add vector drawings from Roberto notes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+1362. 
+
+\begin{gather*}
+	u_1 = (1; 1; -1; -2) \\
+	u_2 = (5; 8; -2; -3) \\
+	u_3 = (3; 9; 3; 8) \\ \\ \\ 
+	v_1 = (1;1;-1;-2) \\
+	v_2 = (5; 8: -2; -3) - \frac {5 \cdot 1 + 8 \cdot 1 + (-2) \cdot (-1) + (-3) \cdot (-2) } {1^2 + 1^2 + (-1)^2 + (-2)^2} (1;1;-1;-2) = \\
+	=  (5; 8: -2; -3) - \frac{21}{7} (1; 1; -1; -2) =  (5; 8: -2; -3) - (3; 3; -3; -6) = (2;5;1;3) \\
+	v_3 = (3; 9; 3; 8) - \frac{3 \cdot 1 + 9 \cdot 1 + 3 \cdot (-1) + 8 (-2)}{7} \cdot (1; 1; -1; -2) - \\
+	-  \frac {3 \cdot 2 + 9 \cdot 5 + 3 \cdot 1 + 8 \cdot 3}{2^2 + 5^2 + 1^2 + 3^2} \cdot (2;5;1;3) = (3;9;3;8) - \frac{-7}{7} \cdot (1;1;-1;-2) - \frac{78}{39} (2;5;1;3) =  \\
+	= (3;9;3;8) + (1;1;-1;-2) - (4;10;2;6) = (0;0;0;0)
+\end{gather*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+Ortogonāli operatori %heading
+
+\textbf{\underline{Def.}} Ja $E$ ir Eiklīda telpa, $A \in End(E) \color{red}{ \; ? End(E)} $, tad saka, ka $A$ ir ortogonāls operators $\Leftrightarrow \forall_{x,y \; \in \; E \;} ((x,y) = (A(x), A(y)))$ 
+
+Īpašības: % do it like list of properties
+\begin{gather*}
+	A \text{ ir ortogonāls} \Leftrightarrow  \forall_{x,y \; \in \; E \;} (|x| = |A(x)|) \\ 
+	\Leftrightarrow A \text{ ortonormētu bāzi  attēlo par ortonormētu bāzi} \\ %add same character
+	\\
+	e_1, \ldots, e_n \text{ - ortonormēta bāze } \quad  \quad x = x_1e_1 + \ldots + x_ne_n \\
+	A(e_1), \ldots A(e_n)  \text{ - ortonormēta bāze } \quad  \quad A(x) = x_1A(e_1) + \ldots + x_nA(e_n) \\
+	(x,y) = x_1y_1 + \ldots + x_ny_n = (A(x), A(y))_{A(e)} \\
+	\\
+	A \text{ ir ortogonāls } \Rightarrow \forall_{x,y \; \in \; E \;} ( \; \angle(x,y) = \angle(A(x), A(y) \; )) \Rightarrow \\
+	\Rightarrow \exists_\alpha (\alpha \cdot A \text{ ir ortogonāls }) \color{red}{\text{what is } \alpha ? }\\ 
+\end{gather*}
+
+\textbf{\underline{Def.}} Ortogonāla operatora matricu ortonormētā bāzē sauc par \textbf{ortogonālu matricu}.
+
+Īpašības: % do it like list of properties
+A ir ortogonāla
+\begin{gather*} % add indentation to all gather
+	 \Leftrightarrow A \cdot A^{\intercal} = E \\
+	 \Leftrightarrow A^{\intercal} \cdot A = E \\
+	 \Leftrightarrow A^-1 = A^{\intercal} \\
+	 \Leftrightarrow A \text{ rindiņas veido ortonormētu bāzi} \\
+	 \Leftrightarrow A \text{ stabiņi veido ortonormētu bāzi} \\
+\end{gather*}
+
+\begin{gather}
+\end{gather}
+\end {document}

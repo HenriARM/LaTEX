@@ -1,0 +1,213 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+% math equation and simple text indentation
+\usepackage[fleqn]{amsmath}
+\setlength{\mathindent}{0em}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\usepackage { amsmath , amssymb , amsthm, mathtools } %math packages
+\usepackage[russian]{babel}
+\usepackage{verbatim} %for comments
+ 
+\usepackage{xcolor}
+ 
+\title{Eiklīda telpa}
+\author{Henrik Gabrielyan}
+\date{the 27 of May 2019}
+
+\begin{document}
+
+\maketitle
+
+\textbf{\underline{Pier.}}  $E = A^{\intercal} \cdot A$
+\begin{gather*}
+	(x,y) = x_1y_1 + \ldots + x_ny_n  \\
+	(x,y) = (A(x), A(y)) \\
+	\\
+	A \text{ - ortogonāls } \Leftrightarrow A^{\intercal} \cdot A = E \\ 
+	A \cdot A^{\intercal} = E \\
+	A^{-1} = A^{\intercal} \\
+	\\
+	f(x,y) = x_e^{\intercal} \cdot F_e \cdot y_e \\
+	(x,y) = x_e^{\intercal} \cdot E \cdot y_e = x_e^{\intercal}  \cdot y_e \\
+	x^{\intercal} \cdot y = (A \cdot x)^{\intercal} \cdot (A \cdot y) \\
+	x^{\intercal} \cdot E \cdot y  = x^{\intercal} \cdot (A^{\intercal} \cdot A) \cdot y \\
+	\quad \Downarrow \\
+	E = A^{\intercal} \cdot A
+\end{gather*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+\begin{gather*}
+	\text{\color{red}{What for is this here?}}\\
+	A_g = P_{eg}^{-1} \cdot A_e \cdot P_eg \\
+	F_g = P_{eg}^{\intercal} \cdot F_e \cdot P_{eg}
+\end{gather*}
+
+\textbf{\underline{T.1}} Katrai kvadrātiskai formai F Eiklīda telpā eksistē ortonormēta bāze e, tāda ka $F_e$ ir diagonālmatrica. \\
+\textbf{\underline{T.2}} Jebkuru kvadrātisku formu ar ortogonāliem pārveidojumiem var novest kanoniskājā formā. \\ %ar skalaro reizinajumu var paradit vai ir kv. forma pozitivi noteikta
+\textbf{\underline{T.3}}  Ja F un G ir kvadrātiskas formas, un vismaz viena no tām ir pozitīvi noteikta, tad eksistē bāze, kurā abas šīs formas ir kanoniskajā formā. \\
+\textbf{\underline{T.4}}  Katram simetriskam operatoram Eiklīda telpā eksistē ortonormēta bāze, kurā tā matrica ir diagonālmatrica. \\
+
+\textbf{\underline{Def.}} Linēaru operatoru A Eiklīda telpā E sauc par simetrisku $\Leftrightarrow$
+$$
+\forall x,y \in E ( \; (x,A(y))  =  (A(x),y) \;)
+$$
+
+\textbf{\underline{Def.}} Simetriska operatora matricu ortonormētā bāzē sauc par simetrisku matricu.
+Īpašības : \\
+* A - simetriska  $\Leftrightarrow$ $A^{\intercal}$ = A \\
+* A = $(a_{ij})$ - simetriska $\Leftrightarrow \forall i,j (a_{ij} = a_{ji})$  \\
+
+\begin{gather*}
+	\forall x \forall y \\
+	\quad \quad x^{\intercal} (A \cdot y) = (A \cdot x)^{\intercal} \cdot y \\
+	\quad \quad x^{\intercal} \cdot A \cdot y = x^{\intercal} \cdot A^{\intercal} \cdot y \\
+	\text{tātad } A = A^{\intercal}
+	\\
+	F_e = P_{se} \cdot F_s \cdot P_{se}  = P_{se}^{-1} \cdot F_s \cdot P_{se}
+\end{gather*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+\textbf{\underline{T.4 Pier: }}  visas $n$ īpašvērtības ir reālas - atliekam. No īpašvektoriem var izveidot ortonormētu bāzi: ar mat. indukciju. \\
+
+Bāze: n = 1 - triviāla: $\lambda_1$ - īpašvērtība, $x \neq 0$ - īpašvektors \\
+
+$\frac{x}{|x|}$ - ortonormēta bāze.  Operatora $A$ matrica - 1 x 1, tā %change 1 x 1
+
+Pāreja: pieņemam, ka dimensijā līdz $n - 1$ esam pierādījuši. \\
+\begin{gather*}
+	L^{'} = \{e_1\}^\bot. \quad L^{'} \text{ ir invarianta apakštelpa} \\
+	x \in L^{'} \Leftrightarrow (x, e_1) = 0 \\
+	A(x) \in ? L^{'} : \quad (A(x), e_1) = (x, A(e_1)) = (x, \lambda_1 \cdot e_1) = \lambda_1 \cdot (x, e_1) =  \lambda_1 \cdot 0 = 0 \\ %questin mark over \in
+	\\
+	E = span(e_1) \oplus L^{'} \\
+	A = A_1 \oplus A^{'} \\
+	\\
+	dimL^{'} = n - 1 \quad  \text{ Pēc ind. pieņ. } L^{'} \text{ eksistē ortonormēta īpašvektoru bāze } e_2, \ldots, e_n \\
+	\text{Pielikam klāt } e_1, \text{ dabūjam ortnormētu īpašvektoru bāzi telpā } E
+\end{gather*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+1585. - 1587. \\
+1586. Ortonormētā bāzē sim. operatoram / kvadrātiskai formai ir šāda matrica. Atrast ortonormētu bāzi, kurā tam/ tai ir diagonālmatrica.
+
+\begin{gather*}
+	A = 
+	\begin{pmatrix}
+   		17 & -8 & 4 \\
+   		-8 & 17 & -4 \\
+   		4, & -4 & 11 \\
+	\end{pmatrix}
+\end {gather*}
+
+
+1) Atrast īpašvērtības, ieskaitot to kārtas.
+$$
+\lambda_{1,2} = 9 \\
+\lambda_{3} = 27
+$$
+
+2) Atrast īpašvektorus. \\
+3) Ortogonalizēt vienas un tās pašas īpašvērtības īpašvektorus. \\
+4) Normēt.
+
+ipasvektrous meklejam 
+
+%check roberto' s notes
+\begin{gather*}
+	\begin{pmatrix} %add vertical line before zeros
+		8 $ -8 $ 4  | 0 \\
+		-8 $ 8 $ -4 | 0 \\
+		4 $ -4 $ 2 | 0 \\
+	\end{pmatrix} 
+% add this symbol ~
+	\begin{pmatrix}
+		8 $ -8 $ 4  | 0 \\
+		0 $ 0 $ 0 | 0 \\
+		0 $ 0 $ 0 | 0 \\
+	\end{pmatrix}
+% add this symbol ~, plus add which vectors are dipendent and independent with tick
+	\begin{pmatrix}
+		2 $ -2 $ 1  | 0 \\
+		0 $ 0 $ 0 | 0 \\
+		0 $ 0 $ 0 | 0 \\
+	\end{pmatrix} % how to add all actions with matrix beside it?
+	\\
+	\\
+	\begin{pmatrix}
+		-10 & -8 & 4 & | & 0 \\
+		-8 & -10 & -4 & | & 0 \\
+		4& -4 & -16 & | & 0 \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & -1 & -4 & | & 0 \\
+		-4 & -5 & -2 & | & 0 \\
+		-5 & -4 & 2 & | & 0 \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & -1 & -4 & | & 0 \\
+		0 & -9 & -18 & | & 0 \\
+		0 & -9 & -18 & | & 0 \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & -1 & -4 & | & 0 \\
+		0 & 1 & 2 & | & 0 \\
+		0 & 0 & 0 & | & 0 \\
+	\end{pmatrix}
+\end{gather*}
+
+\begin{gather*}
+	FAS: %indent
+	(2; -2; 1) \\
+	(1;1;0) = e_1 \\
+	(-1/2; 0; 1) ~ (-1;0;2) = e_2% add tilde
+\end{gather*}
+
+\begin{gather*}
+	e_1^{'} = e_1 \\
+	e_2^{'} = (-1;0;2) - \frac{(-1) \cdot 1 + 0 + 1 + 2 \cdot 0}{1^2 + 1^2 + 0^2} \cdot (1;1;0) = (-1; 0; 2) - \frac{-1}{2} (1;1;0) = (-1;0;2) + (1/2;1/2;0) = (-1/2; 1/2; 2) ~ (-1;1;4) %tilde
+\end{gather*}
+
+
+\begin{gather*}
+	A_{e^{'''}} =
+	\begin{pmatrix}
+		9 & 0 & 0 \\
+		0 & 9 & 0  \\
+		0 & 0 & 27 \\
+	\end{pmatrix}
+\end{gather*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+\begin{align*}
+	R &  & C  & & \\
+	\text{Simetriskas bilineāras formas} & & \text{Ermita bilineāras formas} & & \\
+	f(x,y) = \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} \cdot x_i \cdot y_j & &  \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} \cdot \overline{x_i} \cdot y_j & & \\ 
+	f(x,y) = f(y,x) & & f(x,y) = \overline{f(y,x)} & & \\
+	& & f(x, \alpha y) = \alpha \cdot f(x,y) & & \\
+	& & f(\alpha \cdot x, y) = \overline{\alpha} \cdot f(x,y) & & \\
+	\\
+	F(x) = f(x,x) & & F(x) = f(x,x) & & \\
+	F_e \text{- simetriska} & & F_e \text{ - Hermitu matrica} & & \\
+	F^{\intercal}_e = F_e & & F_e^{*} = F_e & & \\
+	& & a_{ji} = \overline{a_{ij}} & & \\
+	& & A^{*} = \overline{A^\intercal} & &
+\end{align*}
+
+
+
+\begin{gather}
+\end{gather}
+\end {document}
