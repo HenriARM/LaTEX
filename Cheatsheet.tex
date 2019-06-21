@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+% math equation and simple text indentation
+% todo: add explanation about all packages
+\usepackage[fleqn]{amsmath}
+\setlength{\mathindent}{0em}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\usepackage { amsmath , amssymb , amsthm, mathtools } %math packages
+\usepackage[russian]{babel}
+\usepackage{verbatim} %for comments
+
+\usepackage{xcolor}
+
+\usepackage{graphicx} % for Big Chi
+
+\usepackage{showexpl} % for adding source code, loads 'listings' package automatically
+\lstset
+{
+    language=[LaTeX]TeX,
+    breaklines=true,
+    basicstyle=\tt\scriptsize,
+    keywordstyle=\color{blue},
+    identifierstyle=\color{magenta},
+}
+
+\title{Cheatsheet}
+
+% remove this
+\author{}
+\date{}
+%%%%%%%%
+
+\begin{document}
+\maketitle
+
+% todo: edit it as a heading 2
+Vectors
+\begin{gather*}
+	\vec{x} \;  \overline{x}  \; \underline{x} \;  \mathbf{x} \\
+	\vec{\mathbf{x}}  \; \overline{\mathbf{x}} \;  \underline{\mathbf{x}} 
+\end{gather*}
+
+\begin{lstlisting}
+\vec{x}  \overline{x}  \underline{x}  \mathbf{x}
+\vec{\mathbf{x}}  \overline{\mathbf{x}}  \underline{\mathbf{x}} 
+\end{lstlisting}
+
+Matrix with dimensions
+\begin{lstlisting}[mathescape]
+$\underset{n\times m}{A}$		\underset{n\times m}{A} 
+\end{lstlisting}
+
+% in listing you can enter only inline equations with $ ... $ when mathescape is true
+Big A
+\begin{lstlisting}[mathescape]
+$\scalebox{3}{A}^2_0$		\usepackage{graphicx} \scalebox{1.5}{A}^2_0
+\end{lstlisting}
+
+Matrices (p for parens, b for brackets, v for verts, B for braces, V for double verts.)
+\begin{lstlisting}[mathescape]
+$ \begin{matrix} 1 \end{matrix} $	\begin{matrix} 1 \end{matrix}
+$ \begin{pmatrix} 1 \end{pmatrix} $	\begin{pmatrix} 1 \end{pmatrix}
+$ \begin{bmatrix} 1 \end{bmatrix} $	\begin{bmatrix} 1 \end{bmatrix}
+$ \begin{vmatrix} 1 \end{vmatrix} $ 	\begin{vmatrix} 1 \end{vmatrix}
+$ \begin{Bmatrix} 1 \end{Bmatrix} $ 	\begin{Bmatrix} 1 \end{Bmatrix}
+$ \begin{Vmatrix} 1 \end{Vmatrix} $ 	\begin{Vmatrix} 1 \end{Vmatrix}
+\end{lstlisting}
+
+Tilde
+\begin{lstlisting}[mathescape]
+$ \textasciitilde $	\textasciitilde  OR  \~{}
+\end{lstlisting}
+
+Question mark over equal sign
+\begin{lstlisting}[mathescape]
+$ \stackrel{?}{=} $	\stackrel{?}{=}
+\end{lstlisting}
+
+Change color
+\begin{lstlisting}[mathescape]
+$\color{red}{\text{Hello}}$		\usepackage{xcolor} \color{red}{\text{Hello}}
+$\textcolor{red}{Hello}$		\textcolor{red}{Hello}
+\end{lstlisting}
+
+% add other examples from notes
+\begin{lstlisting}[mathescape]
+\end{lstlisting}
+
+\begin{comment}
+\end{comment}
+
+\end {document}
