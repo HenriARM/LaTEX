@@ -38,7 +38,7 @@ Eiklīda telpa
 	M^{\bot} = {x \in E | \forall_{y \in M }(x \bot y)} \\
 	M^{\bot} \text{ īpašības :} \\ % put properties in a list
 	\quad M^{\bot} \text{ ir lineāra apakštelpa} \\
-	\text{Ja } M = y^{(1)}, y^{(2)}, \ldots, y^{(k)},  \text{tad} M^{\bot} \text{ ir atrisinājumu kopa HLVS} \\
+	\text{Ja } M = y^{(1)}, y^{(2)}, \ldots, y^{(k)},  \text{ tad } M^{\bot} \text{ ir atrisinājumu kopa HLVS} \\
 	\begin{cases}
 		y_1^{(1)}x_1 + \ldots + y_n^{(1)} x_n = 0 \\
 		\cdots \cdots \cdots \cdots \cdots \\
@@ -72,7 +72,7 @@ Ieejā: $u_1, u_2, \ldots, u_k$ \\
 Izejā: $w_1, w_2, \ldots, w_L$ - ortonormēta bāze $span(u_1, u_2, \ldots, u_k) $
 
 \begin{gather*}
-	v_1 = u_1 \\
+	v_1 = u_1 \color{red}{\text{how to prove that }(v_1, v_2) = 0 \text{ and }v_2 = u_2 \ldots ?}\\ 
 	v_2 = u_2 - \frac{(u_2, v_1)}{(v_1, v_1)} \cdot v_1 \\
 	v_3 = u_3 - \frac{(u_3, v_1)}{(v_1,v_1)} \cdot v_1 - \frac{(u_3, v_2)}{(v_2, v_2)} \cdot v_2 \\
 	\\
@@ -131,7 +131,7 @@ A ir ortogonāla
 \begin{gather*} % add indentation to all gather
 	 \Leftrightarrow A \cdot A^{\intercal} = E \\
 	 \Leftrightarrow A^{\intercal} \cdot A = E \\
-	 \Leftrightarrow A^-1 = A^{\intercal} \\
+	 \Leftrightarrow A^{-1} = A^{\intercal} \\
 	 \Leftrightarrow A \text{ rindiņas veido ortonormētu bāzi} \\
 	 \Leftrightarrow A \text{ stabiņi veido ortonormētu bāzi} \\
 \end{gather*}

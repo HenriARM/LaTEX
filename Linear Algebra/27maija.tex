@@ -31,7 +31,7 @@
 	A^{-1} = A^{\intercal} \\
 	\\
 	f(x,y) = x_e^{\intercal} \cdot F_e \cdot y_e \\
-	(x,y) = x_e^{\intercal} \cdot E \cdot y_e = x_e^{\intercal}  \cdot y_e \\
+	(x,y) = x_e^{\intercal} \cdot E \cdot y_e = x_e^{\intercal}  \cdot y_e \color{red}{\text{ shouldn't E be Gram matrix?} }\\ 
 	x^{\intercal} \cdot y = (A \cdot x)^{\intercal} \cdot (A \cdot y) \\
 	x^{\intercal} \cdot E \cdot y  = x^{\intercal} \cdot (A^{\intercal} \cdot A) \cdot y \\
 	\quad \Downarrow \\
@@ -50,7 +50,6 @@
 \textbf{\underline{T.1}} Katrai kvadrātiskai formai F Eiklīda telpā eksistē ortonormēta bāze e, tāda ka $F_e$ ir diagonālmatrica. \\
 \textbf{\underline{T.2}} Jebkuru kvadrātisku formu ar ortogonāliem pārveidojumiem var novest kanoniskājā formā. \\ %ar skalaro reizinajumu var paradit vai ir kv. forma pozitivi noteikta
 \textbf{\underline{T.3}}  Ja F un G ir kvadrātiskas formas, un vismaz viena no tām ir pozitīvi noteikta, tad eksistē bāze, kurā abas šīs formas ir kanoniskajā formā. \\
-\textbf{\underline{T.4}}  Katram simetriskam operatoram Eiklīda telpā eksistē ortonormēta bāze, kurā tā matrica ir diagonālmatrica. \\
 
 \textbf{\underline{Def.}} Linēaru operatoru A Eiklīda telpā E sauc par simetrisku $\Leftrightarrow$
 $$
@@ -68,17 +67,19 @@ $$
 	\quad \quad x^{\intercal} \cdot A \cdot y = x^{\intercal} \cdot A^{\intercal} \cdot y \\
 	\text{tātad } A = A^{\intercal}
 	\\
-	F_e = P_{se} \cdot F_s \cdot P_{se}  = P_{se}^{-1} \cdot F_s \cdot P_{se}
+	F_e = P_{se} \cdot F_s \cdot P_{se}  = P_{se}^{-1} \cdot F_s \cdot P_{se} \color{red}{\quad F_e?}
 \end{gather*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 
-\textbf{\underline{T.4 Pier: }}  visas $n$ īpašvērtības ir reālas - atliekam. No īpašvektoriem var izveidot ortonormētu bāzi: ar mat. indukciju. \\
+\textbf{\underline{T.4}}  Katram simetriskam operatoram Eiklīda telpā eksistē ortonormēta bāze, kurā tā matrica ir diagonālmatrica. \\
+
+\textbf{\underline{Pier: }}  visas $n$ īpašvērtības ir reālas - atliekam. No īpašvektoriem var izveidot ortonormētu bāzi: ar mat. indukciju. \\
 
 Bāze: n = 1 - triviāla: $\lambda_1$ - īpašvērtība, $x \neq 0$ - īpašvektors \\
 
-$\frac{x}{|x|}$ - ortonormēta bāze.  Operatora $A$ matrica - 1 x 1, tā %change 1 x 1
+$\frac{x}{|x|}$ - ortonormēta bāze.  Operatora $A$ matrica - 1 x 1 %change 1 x 1
 
 Pāreja: pieņemam, ka dimensijā līdz $n - 1$ esam pierādījuši. \\
 \begin{gather*}
@@ -105,29 +106,27 @@ Pāreja: pieņemam, ka dimensijā līdz $n - 1$ esam pierādījuši. \\
 	\begin{pmatrix}
    		17 & -8 & 4 \\
    		-8 & 17 & -4 \\
-   		4, & -4 & 11 \\
+   		4 & -4 & 11 \\
 	\end{pmatrix}
 \end {gather*}
 
 
 1) Atrast īpašvērtības, ieskaitot to kārtas.
-$$
-\lambda_{1,2} = 9 \\
-\lambda_{3} = 27
-$$
-
+\begin{gather*} % add indent
+	\lambda_{1,2} = 9 \\
+	\lambda_{3} = 27
+\end{gather*}
 2) Atrast īpašvektorus. \\
 3) Ortogonalizēt vienas un tās pašas īpašvērtības īpašvektorus. \\
 4) Normēt.
 
-ipasvektrous meklejam 
-
+īpašvektrous meklējam 
 %check roberto' s notes
 \begin{gather*}
 	\begin{pmatrix} %add vertical line before zeros
 		8 $ -8 $ 4  | 0 \\
 		-8 $ 8 $ -4 | 0 \\
-		4 $ -4 $ 2 | 0 \\
+		4 $ -4 $ 2 | 0 \\ 
 	\end{pmatrix} 
 % add this symbol ~
 	\begin{pmatrix}
@@ -141,8 +140,14 @@ ipasvektrous meklejam
 		0 $ 0 $ 0 | 0 \\
 		0 $ 0 $ 0 | 0 \\
 	\end{pmatrix} % how to add all actions with matrix beside it?
-	\\
-	\\
+\end{gather*}
+\begin{gather*}
+	FAS: %indent
+	(1;1;0) = e_1 \\
+	(-1/2; 0; 1) ~ (-1;0;2) = e_2% add tilde
+\end{gather*}
+
+\begin{gather*}
 	\begin{pmatrix}
 		-10 & -8 & 4 & | & 0 \\
 		-8 & -10 & -4 & | & 0 \\
@@ -164,17 +169,17 @@ ipasvektrous meklejam
 		0 & 0 & 0 & | & 0 \\
 	\end{pmatrix}
 \end{gather*}
-
 \begin{gather*}
 	FAS: %indent
-	(2; -2; 1) \\
-	(1;1;0) = e_1 \\
-	(-1/2; 0; 1) ~ (-1;0;2) = e_2% add tilde
+	e_3 = (2; -2; 1)
 \end{gather*}
+
+
 
 \begin{gather*}
 	e_1^{'} = e_1 \\
-	e_2^{'} = (-1;0;2) - \frac{(-1) \cdot 1 + 0 + 1 + 2 \cdot 0}{1^2 + 1^2 + 0^2} \cdot (1;1;0) = (-1; 0; 2) - \frac{-1}{2} (1;1;0) = (-1;0;2) + (1/2;1/2;0) = (-1/2; 1/2; 2) ~ (-1;1;4) %tilde
+	e_2^{'} = (-1;0;2) - \frac{(-1) \cdot 1 + 0 + 1 + 2 \cdot 0}{1^2 + 1^2 + 0^2} \cdot (1;1;0) = (-1; 0; 2) - \\
+	- \frac{-1}{2} (1;1;0) = (-1;0;2) + (1/2;1/2;0) = (-1/2; 1/2; 2) ~ (-1;1;4) %tilde
 \end{gather*}
 
 
@@ -192,6 +197,7 @@ ipasvektrous meklejam
 \pagebreak
 
 \begin{align*}
+	\color{red}{\text{what is overline here? in Hermit}} \\
 	R &  & C  & & \\
 	\text{Simetriskas bilineāras formas} & & \text{Ermita bilineāras formas} & & \\
 	f(x,y) = \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} \cdot x_i \cdot y_j & &  \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} \cdot \overline{x_i} \cdot y_j & & \\ 
