@@ -24,7 +24,7 @@ Iespējami divi polinomu vienādības jēdzieni:
 
 1) Teiksim, ka polinomi $P_1(x)$ un $P_2(x)$ ir \textbf{vienādi kā izteiksmes}, ja to kanoniskais pieraksts satur vienādas $x$ pakāpes un vienādus koeficientus pie attiecīgajām $x$ pakāpēm.
 
-2) Teiksim, ka polinomi $P_1(x)$ un $P_2(x)$ ir \textbf{vienādi kā funkcijas}, ja visiem kompleksiem skaitļiem x, P1(x) = P2(x).
+2) Teiksim, ka polinomi $P_1(x)$ un $P_2(x)$ ir \textbf{vienādi kā funkcijas}, ja visiem kompleksiem skaitļiem x, $P_1(x) = P_2(x)$.
 
 Polinomam ar veseliem koeficientiem var būt dalītāji pat ar kompleksiem koeficientiem, piemēram:
 
@@ -32,19 +32,63 @@ $$
 x^2 + 1 = (x - i) \cdot (x + i)
 $$
 
-LKD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
 
-Divu polinomu LKD, jeb GCD, (greatest common divisor) ir kopīgais dalītājs ar visaugstāko pakāpi.
+\textbf{\underline{Teo.}}  Jebkuriem diviem polinomiem $P(x)$ un $Q(x)$, ja $Q$ nav nulles polinoms, tad var atrast vienīgos polinomus – dalījumu $D(x)$ un atlikumu $R(x)$ tādus, ka
+$P(x)=Q(x)D(x)+R(x)$, un $R(x)$ pakāpe ir mazāka par dalītāja $Q(x)$ pakāpi vai arī $R(x)$ ir nulles polinoms.
 
-Ja $D(x)$ ir divu polinomu kopīgs dalītājs, tad tāds ir arī $c \cdot D(x)$. Tāpēc būs lietderīgi vienoties, ka LKD koeficients ir $1$.
+%atrast pieradijumu tai teoremI
+% on 11th slide showing how to recursiveky delete p(x) on q(x) 
 
-Piemērs. $LKD(2x+2, 3x+3) = x+1$, nevis $5x+5$
+\textbf{\underline{Teo.}} Jebkurš polinoms dalās ar jebkuru null-tās pakāpes polinomu.
 
+Piemērs: $x^2+1$ dalās ar $17$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 
+Polinomu LKD
 
-\begin{gather}
-\end{gather}
+Divu polinomu LKD, jeb GCD (greatest common divisor),  ir kopīgais dalītājs ar \textbf{visaugstāko pakāpi}.
+
+\textbf{\underline{Teo.}} Ja $D(x)$ ir divu polinomu kopīgs dalītājs, tad tāds ir arī $c \cdot D(x)$. Tāpēc būs lietderīgi vienoties, ka LKD koeficients ir $1$. \\
+Piemērs. $LKD(2x+2, 3x+3) = x+1$, nevis $5x+5$ \\
+
+\textbf{\underline{Teo.}}  $ LKD(P(x), Q(x)) = LKD(P(x) - D(x) \cdot Q(x), Q(x)) $ \\
+\textbf{\underline{Pier.}} Ja $P$ un $Q$ abi dalās ar $R$, tad arī $D \cdot Q$ un $P - D \cdot Q$
+dalās ar $R$. \\
+
+Tātad LKD mēs varētu meklēt, izmantojot Gausa metodes ideju: \\
+\textbf{\underline{Piem.}}  $P(x)=x^3-6x^2+11x-6; \quad Q(x)=x^2-7x+10;  \quad deg(P(x) + Q(x)) = 5$
+\begin{gather*}
+	\text{1) likvidējam } x^3: \quad P_1=P - x \cdot Q = x^2+x-6 \quad deg(P_1(x) + Q(x)) = 4 \\
+	\text{2) likvidējam vienu no } x^2: \quad P_2 = P_1 - Q = 8x - 16 \quad deg(P_2(x) + Q(x)) = 3\\
+	\text{3) likvidējam atlikušo } x^2: \quad Q_1 = Q - \frac{x}{8} \cdot P_2 = 10 - 5x \\
+	\text{4) likvidējam vienu no x-iem: } \quad Q_2 = Q_1 + \frac{5}{8} \cdot P_2 = 0 \\
+	LKD(8x -16, 0) = 8x - 16 \Rightarrow LKD(x^3 - 6x^2+11x-6, x^2-7x+10) = x-2.
+\end{gather*}
+
+Ja šis process beigtos ar pāri, kas sastāv tikai no skaitļiem. Tad LKD ir null-tās pakāpes polinoms :  $LKD(P, Q)=1$
+
+Ja P un Q abi ir nulles polinomi, tad uzdevumam nav atrisinājuma (nulles polinoms
+dalās ar jebkuru citu polinomu).
+Ja viens no polinomiem ir nulles polinoms, bet otrs – nav, tad šis otrs, dalīts ar
+vecākās x pakāpes koeficientu, arī ir meklētais LKD, un to arī izdosim kā rezultātu. 
+
+% read till end recursive algo for it
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+Polinoma saknes
+
+Polinoma P(x) sakne ir skaitlis c tāds, ka P(c)=0.
+
+Skaitlis c tad un tikai tad ir polinoma
+P(x) sakne, ja P(x) dalās ar x−c.
+Pierādījums.
+a) Ja P(x)=Q(x)(x−c), tad P(c)=0.
+
+\begin{gather*}
+\end{gather*}
 \end {document}
