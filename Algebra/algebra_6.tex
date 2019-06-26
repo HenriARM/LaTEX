@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+% math equation and simple text indentation
+\usepackage[fleqn]{amsmath} 
+\setlength{\mathindent}{0em}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\usepackage { amsmath , amssymb , amsthm, mathtools } %math packages
+\usepackage[russian]{babel}
+\usepackage{verbatim} %for comments
+ 
+\title{Lauki, gredzeni un grupas}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Gredzens
+
+Gredzenu veido kāda objektu kopa $G$ un divas divvietīgas operācijas šajā kopā: $+$ un $*$, kas vienmēr ir izpildāmas $( a,b \in G \rightarrow  (a + b) \in G \wedge (a * b) \in G)$, un kam piemīt šādas īpašības (tās sauc arī par gredzena aksiomām):
+\begin{gather*}
+1. \text{Saskaitīšana ir asociatīva: } (a+b)+c=a+(b+c). \\
+2. \text{Saskaitīšana ir komutatīva: } a+b=b+a. \\
+3. \text{Eksistē nulles elements 0: } 0+a=a. \\
+4 \text{Katram a eksistē pretējais elements b: } a + b = 0 \\
+5. \text{Reizināšana ir asociatīva: } (a \cdot b) \cdot c = a \cdot (b \cdot c)  \quad \text{ (Bet reizināšanai nav obligāti jābūt komutatīvai!) }\\
+6. \text{Eksistē elements-vieninieks 1: } 1 \cdot a = a \cdot 1= a \quad \text{(Bet reizināšana ar 1 ir komutatīva)} \\
+7. \text{Distributīvie likumi :} a \cdot (b+c)=(a \cdot b)+(a \cdot c); \quad (b+c) \cdot a=(b \cdot a +(c \cdot a). \\
+\text{(Kāpēc divi? Tāpēc, ka gredzenā reizināšana var nebūt komutatīva.)}
+\end{gather*}
+
+
+T1. Jebkurā gredzenā nulles elements un vieninieks ir tikai viens.
+T2. Jebkurā gredzenā katram a pretējais elements ir tikai viens (tāpēc varam to apzīmēt ar $
+-a$).
+
+Gredzena aksiomas negarantē, a) ka no ax=ay (vai xa=ya), ja a nav 0, seko x=y; b) ka no ab=0 seko a=0 vai b=0.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+
+\begin{gather*}
+\end{gather*}
+
+\begin{comment}
+\end{comment}
+\end {document}

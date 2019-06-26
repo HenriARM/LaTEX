@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+% math equation and simple text indentation
+\usepackage[fleqn]{amsmath} 
+\setlength{\mathindent}{0em}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\usepackage { amsmath , amssymb , amsthm, mathtools } %math packages
+\usepackage[russian]{babel}
+\usepackage{verbatim} %for comments
+ 
+\title{Matricas}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{\underline{Teo.}}  $(AB)^\intercal = B ^\intercal A ^\intercal$
+\begin{gather*} 
+	\text{vienības matrica } A \cdot E_n = E_n \cdot A = A  \quad det(E_n)=1
+\end{gather*}
+\textbf{\underline{Teo.}}  $det(AB) = det(A)det(B)$
+
+Ja $det(A)=0$, tad matricu $A$ sauc par \textbf{singulāru} matricu(citos tekstos - par deģenerētu matricu).
+
+Secinājums: reizinājums $ABCD \ldots Z$ ir singulāra matrica tad un tikai tad, ja kaut viena no matricām $A, B, C, D, \ldots Z $ ir singulāra.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+Inversā (apgrieztā) matrica $A^1$
+
+$$
+A^{-1} \cdot A=A \cdot A^{-1}= E
+$$
+
+\begin{gather*}
+ 	\text{Ja } A  \text{ ir singulāra matrica, tad inversā matrica } A^{-1} \text{ neeksistē.} \\
+	\quad \text{jo }  det(A \cdot A^{-1}) = det(E) = 1 = det(A) \cdot det(A^{-1}) \\
+	\text{Ja $A$ ir singulāra un $B$ - nesingulāra, tad vienādojumam $A \cdot X = B$ nav atrisinājumu, jo nesingulāru dalīt uz singulāru nevar.}
+\end{gather*}
+
+\textbf{\underline{Teo.}} Ja $det(A) \neq 0$ , tad inversā matrica $A^{-1}$ vienmēr eksistē!
+ 
+\begin{gather*}
+	\textbf{algebriskais papildinājums } C_{ij} =  (-1)^{i+ j} det(M_{ij}), \\
+	\text{\quad kur  $M_{ij}$ ir $(n-1)x(n-1)$ matrica, ko iegūst no matricas $A$, izsvītrojot i-to rindu un j-to kolonu.}\\
+	\text{No skaitļiem $C_{ij}$ var sastādīt \textbf{kofaktoru} matricu $A^C  = (C_{ij} | i, j = 1 \ldots n)$},
+\end{gather*}
+
+\begin{gather*}
+ 	\text{Lemma. Reizinot $A \cdot (A^C)^T$ vai $(A^C)^T \cdot A$, iegūst matricu, kurai visi elementi ir 0, }\\ 
+ 		\text{ \quad izņemot diagonāles elementus, kas ir vienādi ar $det(A)$ } \\
+	\text{Secinājums. Ja $det(A) \neq 0$ , tad $A^{-1} = \frac{1}{det(A)} \cdot (A^C)^T $}
+\end{gather*}
+
+Gausa-Jordana metode
+\begin{gather*}
+	TODO
+\end{gather*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+Citas teoremas
+\begin{gather*}
+	(A \cdot B)^{-1} = B^{-1} \cdot A^{-1} \\
+	(cA)B = A(cB) = c(AB). \\ %c - skaitlis
+	(A+B)^2 =(A+B)\cdot (A+B)= A^2 +AB+BA+B^2 \\
+	(A+B)(A-B)=A^2-AB+BA-B^2 \\
+	\text{Ja $det(A) \neq 0$, tad vektors $x=A^{-1} \cdot b$ ir sistēmas $A \cdot x = b$ vienīgais atrisinājums.}
+\end{gather*}
+
+\text{Piemērs. $3x+2y=1; 4x+3y=1; A=[{3,2},{4,3}]; b={1,1};$} \\
+\text{$A^{-1}=[{3,-2},{-4, 3}]; A^{-1}b={1,-1}; x=1; y=-1$.}
+
+
+\begin{gather*}
+\end{gather*}
+
+\begin{comment}
+\end{comment}
+\end {document}
