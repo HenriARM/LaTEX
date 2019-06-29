@@ -1,7 +1,5 @@
-# matches everything	
-/*
-# except files with certain extension, located in all directories
-!**/*.pdf
-!**/*.md
-!**/*.tex
-!_config.yml
+.idea/
+**/*.aux
+**/*.log
+**/*.synctex.gz
+
