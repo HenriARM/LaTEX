@@ -1,7 +1,4 @@
-.idea/
-.DS_Store/
-
-*.aux
-*.lof
-*.log
-*.synctex.gz
+# matches everything	
+/*
+# except files with .tex or .pdf location in all directories
+!**/*.pdf
