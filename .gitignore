@@ -1,4 +1,7 @@
 # matches everything	
 /*
-# except files with .tex or .pdf location in all directories
+# except files with certain extension, located in all directories
 !**/*.pdf
+!**/*.md
+!**/*.tex
+!_config.yml
