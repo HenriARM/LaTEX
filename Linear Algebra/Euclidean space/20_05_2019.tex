@@ -1,5 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
 
 % math equation and simple text indentation
 \usepackage[fleqn]{amsmath}
@@ -8,23 +10,32 @@
 \setlength{\parskip}{1em}
 
 \usepackage { amsmath , amssymb , amsthm, mathtools } %math packages
-\usepackage[russian]{babel}
+\usepackage[english]{babel}
 \usepackage{verbatim} %for comments
 
 \usepackage{xcolor}
  
 \title{Eiklīda telpas}
 \author{Henrik Gabrielyan}
-\date{the 20 of May 2019}
+\date{the 20th of May 2019}
 
 \begin{document}
 
 \maketitle
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Def}
+\newtheorem*{theorem}{Teo}[section]
+\renewcommand\qedsymbol{$\blacksquare$}
+\renewcommand*{\proofname}{Pier}
+
+\section*{}
 \underline{$1212. - 1216.$}\\
 
-$1212.$  $ 5x_1^2 + x_2^2 +  \alpha x_3^2 + 4x_1x_2-2x_1x_3-2x_2x_3$
+$1212.$  Uzdevuma formulējums: 
+Kādām $\alpha$ vērtībām šī kvadrātiskā forma ir pozitīvi noteikta? \\
+
+$ 5x_1^2 + x_2^2 +  \alpha x_3^2 + 4x_1x_2-2x_1x_3-2x_2x_3$
 
 \begin{gather*}
 F_s = 
@@ -66,15 +77,16 @@ F_s =
 \end{gather*}
 \pagebreak
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Eiklīda telpa}
 
-Eiklīda telpa
-
-\textbf{\underline{Def.}} Par \textbf{Eiklīda telpu} sauc jebkuru pāri (E,F), kur E ir linēara telpa pār R un F ir pozitīvi noteikta kvadrātiska forma.
+\begin{definition}
+Par \textbf{Eiklīda telpu} sauc jebkuru pāri (E,F), kur E ir linēara telpa pār R un F ir pozitīvi noteikta kvadrātiska forma.
 
 F atbilstošo simetrisko bilineāro formu sauc par šīs \textbf{Eiklīda telpas skalāro reizinājumu}. 
 
-x un y skalārais reizniājums : (x, y)
+\end{definition}
+
+Apzīmējums : (x, y)
 
 Izvēlamies bāzi, kurā F ir normālformā.
 
@@ -111,39 +123,49 @@ Leņķis starp vektoriem x un y \\
 $\angle (x,y) = arccos \frac{(x,y)}{|x||y|}$ \\ 
 $x \neq 0, y \neq 0$
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak
+\section*{Košī nevienādība}
 
-Košī nevienādība
 \begin{gather*}
 |(x,y)| \leq |x| \cdot |y|  \\
   \quad \updownarrow \\
 (x,y)^2 \leq |x|^2 \cdot |y|^2  \\
-\\
-\textcolor{red}{\text{how we came to equation below? what is } \alpha ?} \\
- 0 \leq (x - \alpha y, x-\alpha y) =  \\
- \; \; \; = (x, x - \alpha y) - \alpha (y, x - \alpha y) = \\
- \; \; \; =  (x,x) - \alpha (x,y) - \alpha (y,x) + \alpha^2 (y,y) = \\
- \; \; \; = (y,y) \alpha^2 - 2 (x,y) \alpha + (x,x) \\
-\Rightarrow  y \neq 0
 \end{gather*}
 
-\textbf{\underline{Def.}} Saka, ka  \textbf{vektori} x un y ir \textbf{ortogonāli} $\Leftrightarrow (x,y) = 0$. Apzīmē, kā $ x \bot y$.
-\\ \\
-\textbf{\underline{Def.}}   \textbf{Vektoru sistēmu} $e_1, e_2, \ldots, e_k$ sauc par \textbf{ortogonālu}   
+\begin{proof} Ja $ x = 0 $ vai $ y = 0 $, tad $(x,y) = 0 $, un $0 \leq |x| \cdot |y|$ seko no $ 0 	\leq |x|$ un $0 \leq |y|$. Turpmāk pieņemsim, ka $x \neq 0$ un $y \neq 0$. \\
+
+	Aplūkosim vektora $x - \alpha y$ skalāro kvadrātu, kur $\alpha$ ir reāls parametrs.
+	\begin{gather*}
+ 		0 \leq (x - \alpha y, x-\alpha y) =  \\
+ 		\; \; \; = (x, x - \alpha y) - \alpha (y, x - \alpha y) = \\
+ 		\; \; \; =  (x,x) - \alpha (x,y) - \alpha (y,x) + \alpha^2 (y,y) = \\
+ 		\; \; \; = (y,y) \alpha^2 - 2 (x,y) \alpha + (x,x) \\
+		\\
+		\frac{D}{4} \leq 0 \\
+		(x,y)^2 - (x,x) \cdot (y,y) \leq 0 \\
+		(x,y)^2 \leq |x|^2 \cdot |y|^2
+	\end{gather*}
+\end{proof}
+
+\begin{definition} Saka, ka  \textbf{vektori} x un y ir \textbf{ortogonāli} $\Leftrightarrow (x,y) = 0$. Apzīmē, kā $ x \bot y$.
+\end{definition} 
+
+\begin{definition} \textbf{Vektoru sistēmu} $e_1, e_2, \ldots, e_k$ sauc par \textbf{ortogonālu}   
 	$\Leftrightarrow  \forall i \forall j (i \neq j  \rightarrow e_i  \bot e_j)$
-\\ \\
-\textbf{\underline{Teorēma.}} Ortogonāla nenulles vektoru sistēma lineāri neatkarīga \\
+\end{definition}
+
+\begin{theorem} Ortogonāla nenulles vektoru sistēma lineāri neatkarīga \\
 	$\alpha_1e_1 + \ldots + \alpha_ke_k = 0$ (pareizināsim skalāri ar $e_i$) \\
 	$(e_i, \alpha_1e_1 + \ldots + \alpha_ke_k) = \sum_{j=1}^{k}\alpha_j(e_i,e_j) = 0$
-	\textcolor{red}{why it is equal to 0, if there could be situation then $i = j$, and $(i,j) \neq 0$ ?}
-\\ \\
-\textbf{\underline{Def.}} Saka, ka \textbf{vektors} x ir \textbf{normēts}  $\Leftrightarrow |x| = 1 $ \\
+\end{theorem}
+
+\begin{definition} Saka, ka \textbf{vektors} x ir \textbf{normēts}  $\Leftrightarrow |x| = 1 $ \\
 	Vektoru $x$ normēšana:  $ x \rightarrow \frac{x}{|x|} $ \\ 
 	Lai pierādītu, ka $x$ vektora normēšanai vajag dalīt uz $|x|$, varam vienādībā
 	$|u| = \sqrt{u_1^2 + \ldots u_n^2} = 1$ ievietot $u_1 = \frac{v_1}{|v|} = \frac{v_1}{ \sqrt{v_1^2 + \ldots v_n^2}}$
-\\ \\
-\textbf{\underline{Def.}} Ortogonālu vektoru sistēmu,  kas sastāv no normētiem vektoriem, sauc par \textbf{ortonormētu vektroru sistēmu}. Ja tā ir lineārās telpas bāze, tad to sauc par \textbf{ortonormētu bāzi}. 
+\end{definition}
+
+\begin{definition} Ortogonālu vektoru sistēmu,  kas sastāv no normētiem vektoriem, sauc par \textbf{ortonormētu vektroru sistēmu}. Ja tā ir lineārās telpas bāze, tad to sauc par \textbf{ortonormētu bāzi}. 
+\end{definition}
 
 \pagebreak 
 
